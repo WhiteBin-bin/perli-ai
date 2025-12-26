@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1766733646317,
+  "lastUpdate": 1766733802302,
   "repoUrl": "https://github.com/WhiteBin-bin/perli-ai",
   "entries": {
     "Benchmark": [
@@ -208,6 +208,36 @@ window.BENCHMARK_DATA = {
           {
             "name": "aicard.perli.ml.benchmark.UpliftBenchmark.benchmarkPredictUplift",
             "value": 6.355804647340365e-7,
+            "unit": "ms/op",
+            "extra": "iterations: 1\nforks: 1\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "81628455+WhiteBin-bin@users.noreply.github.com",
+            "name": "Baek HyeonBin",
+            "username": "WhiteBin-bin"
+          },
+          "committer": {
+            "email": "81628455+WhiteBin-bin@users.noreply.github.com",
+            "name": "Baek HyeonBin",
+            "username": "WhiteBin-bin"
+          },
+          "distinct": true,
+          "id": "c7da36515d5a2e42452394d893ecbcf5b7fe836c",
+          "message": "Merge branch 'develop' of https://github.com/WhiteBin-bin/perli-ai into develop",
+          "timestamp": "2025-12-26T16:21:00+09:00",
+          "tree_id": "9e4fe06fe5e13b3ba8a4a71db91d26b346b66273",
+          "url": "https://github.com/WhiteBin-bin/perli-ai/commit/c7da36515d5a2e42452394d893ecbcf5b7fe836c"
+        },
+        "date": 1766733802027,
+        "tool": "jmh",
+        "benches": [
+          {
+            "name": "aicard.perli.ml.benchmark.UpliftBenchmark.benchmarkPredictUplift",
+            "value": 6.353577175973158e-7,
             "unit": "ms/op",
             "extra": "iterations: 1\nforks: 1\nthreads: 1"
           }
