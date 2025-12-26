@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1766733802302,
+  "lastUpdate": 1766733934354,
   "repoUrl": "https://github.com/WhiteBin-bin/perli-ai",
   "entries": {
     "Benchmark": [
@@ -238,6 +238,36 @@ window.BENCHMARK_DATA = {
           {
             "name": "aicard.perli.ml.benchmark.UpliftBenchmark.benchmarkPredictUplift",
             "value": 6.353577175973158e-7,
+            "unit": "ms/op",
+            "extra": "iterations: 1\nforks: 1\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "81628455+WhiteBin-bin@users.noreply.github.com",
+            "name": "Baek HyeonBin",
+            "username": "WhiteBin-bin"
+          },
+          "committer": {
+            "email": "81628455+WhiteBin-bin@users.noreply.github.com",
+            "name": "Baek HyeonBin",
+            "username": "WhiteBin-bin"
+          },
+          "distinct": true,
+          "id": "d05f46303c1c0cfee7f4a3a32a69f2f618f61b9c",
+          "message": "✨ Feat: Tribuo 기반 XGBoost 랭킹 모델 고도화 및 검증 로직 구현\n\n- 최근 행동 데이터(Uplift Features) 수혈을 위한 V2 데이터셋 처리 로직 추가\n- Tribuo XGBoost 알고리즘 도입 및 하이퍼파라미터 최적화\n- V1 대비 V2 성능 대조를 위한 비교 분석 앱 개발\n\nCloses #25",
+          "timestamp": "2025-12-26T16:23:11+09:00",
+          "tree_id": "9e4fe06fe5e13b3ba8a4a71db91d26b346b66273",
+          "url": "https://github.com/WhiteBin-bin/perli-ai/commit/d05f46303c1c0cfee7f4a3a32a69f2f618f61b9c"
+        },
+        "date": 1766733933908,
+        "tool": "jmh",
+        "benches": [
+          {
+            "name": "aicard.perli.ml.benchmark.UpliftBenchmark.benchmarkPredictUplift",
+            "value": 6.381042501900366e-7,
             "unit": "ms/op",
             "extra": "iterations: 1\nforks: 1\nthreads: 1"
           }
