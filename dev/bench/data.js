@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1766995722970,
+  "lastUpdate": 1766997206378,
   "repoUrl": "https://github.com/WhiteBin-bin/perli-ai",
   "entries": {
     "Benchmark": [
@@ -358,6 +358,36 @@ window.BENCHMARK_DATA = {
           {
             "name": "aicard.perli.ml.benchmark.UpliftBenchmark.benchmarkPredictUplift",
             "value": 6.322137101304564e-7,
+            "unit": "ms/op",
+            "extra": "iterations: 1\nforks: 1\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "81628455+WhiteBin-bin@users.noreply.github.com",
+            "name": "Baek HyeonBin",
+            "username": "WhiteBin-bin"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f3dd55004ac077decb6e542edf29b6ce110bcc58",
+          "message": "✨ Feat: 수리적 최적화 엔진 기초 로직 및 아키텍처 구현 (#31)",
+          "timestamp": "2025-12-29T17:30:55+09:00",
+          "tree_id": "4d2392f83d61cb12119f958a2d74f33180795266",
+          "url": "https://github.com/WhiteBin-bin/perli-ai/commit/f3dd55004ac077decb6e542edf29b6ce110bcc58"
+        },
+        "date": 1766997206098,
+        "tool": "jmh",
+        "benches": [
+          {
+            "name": "aicard.perli.ml.benchmark.UpliftBenchmark.benchmarkPredictUplift",
+            "value": 6.417293043269963e-7,
             "unit": "ms/op",
             "extra": "iterations: 1\nforks: 1\nthreads: 1"
           }
