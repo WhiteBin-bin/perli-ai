@@ -22,9 +22,25 @@ public class CardScoreV2 implements ConstraintProvider {
     @Override
     public Constraint[] defineConstraints(ConstraintFactory factory) {
         return new Constraint[] {
-                maximizeBenefitWithinLimit(factory), // 한도 내 혜택 극대화
-                reachPerformanceTarget(factory)      // 실적 목표 달성 유도
+                penalizePerformanceShortfall(factory),
+                maximizeBenefitWithinLimit(factory),
+                reachPerformanceTarget(factory)
         };
+    }
+
+    /**
+     * 카드별 실적 목표 미달 금액을 하드 패널티로 반영합니다.
+     * 목표를 채우지 못한 해는 우선순위에서 탈락하도록 강제합니다.
+     */
+    private Constraint penalizePerformanceShortfall(ConstraintFactory factory) {
+        return factory.forEach(CardAssignmentV2.class)
+                .groupBy(CardAssignmentV2::getCreditCard,
+                        ConstraintCollectors.sum(a -> (int) a.getSpendingAmount()))
+                .penalize(HardSoftScore.ONE_HARD, (card, sumAmount) -> {
+                    double shortfall = card.getPerformanceTarget() - (card.getCurrentPerformance() + sumAmount);
+                    return shortfall > 0 ? (int) Math.ceil(shortfall / 1000.0) : 0;
+                })
+                .asConstraint("PenalizePerformanceShortfall");
     }
 
     /**
@@ -63,7 +79,7 @@ public class CardScoreV2 implements ConstraintProvider {
                         ConstraintCollectors.sum(a -> (int) a.getSpendingAmount()))
                 .filter((card, sumAmount) ->
                         (card.getCurrentPerformance() + sumAmount) >= card.getPerformanceTarget())
-                .reward(HardSoftScore.ofSoft(5000)) // 실적 달성 시 보너스 (가중치 높음)
+                .reward(HardSoftScore.ofSoft(5000))
                 .asConstraint("ReachPerformanceTarget");
     }
 }
